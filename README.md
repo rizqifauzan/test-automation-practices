@@ -92,6 +92,4 @@ test('should reorder items via drag and drop', async () => {
 ## 👥 Team
 
 - **Moataz Nabil** - Project Owner
-  - [GitHub](https://github.com/moatazeldebsy)
   - [LinkedIn](https://www.linkedin.com/in/moataz-nabil/)
-  - [Email](mailto:moatazeldebsy@gmail.com)
