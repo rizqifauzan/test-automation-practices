@@ -1,6 +1,5 @@
 # Test Automation Practice Platform
 
-![Build Status](https://img.shields.io/netlify/c5df6a-rainbow-lokum-netlify-app)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 A comprehensive platform designed to help QA engineers and developers practice test automation with real-world scenarios and challenges. This application provides a wide range of testing opportunities through various interactive components and edge cases commonly found in web applications.
