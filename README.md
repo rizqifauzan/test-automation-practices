@@ -1,7 +1,5 @@
 # Test Automation Practice Platform
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-
 A comprehensive platform designed to help QA engineers and developers practice test automation with real-world scenarios and challenges. This application provides a wide range of testing opportunities through various interactive components and edge cases commonly found in web applications.
 
 ## 🚀 Features
@@ -90,9 +88,6 @@ test('should reorder items via drag and drop', async () => {
 - Follow the existing code style
 - Keep pull requests focused on a single feature
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👥 Team
 
