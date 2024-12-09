@@ -33,7 +33,7 @@ A comprehensive platform designed to help QA engineers and developers practice t
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/test-automation-practice.git
+git clone https://github.com/moatazeldebsy/test-automation-practice.git
 cd test-automation-practice
 ```
 
