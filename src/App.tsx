@@ -28,7 +28,7 @@ import { ShadowDOMPage } from './pages/ShadowDOMPage';
 function App() {
   return (
     <ThemeProvider>
-      <Router basename="/">
+      <Router>
         <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors flex">
           <SideNav />
           <div className="flex-1 ml-64">
