@@ -8,7 +8,7 @@ export default defineConfig({
   },
   base: '/',
   build: {
-    // Ensure _redirects file is copied to the build output
+    outDir: 'dist',
     copyPublicDir: true
   }
 });
