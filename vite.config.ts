@@ -7,7 +7,7 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   build: {
-    base: '/test-automation-practices/',
+    base: '/',
     outDir: 'dist',
     copyPublicDir: true
   }
