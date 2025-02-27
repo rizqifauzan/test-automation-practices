@@ -35,8 +35,8 @@ A comprehensive platform designed to help QA engineers and developers practice t
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/moatazeldebsy/test-automation-practice.git
-cd test-automation-practice
+git clone https://github.com/moatazeldebsy/test-automation-practices.git
+cd test-automation-practices
 ```
 
 2. Install dependencies:
