@@ -37,8 +37,8 @@ export const CheckboxesPage: React.FC = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
-      <h1 className="text-2xl font-bold mb-6">Checkboxes</h1>
-      <div className="bg-white p-6 rounded-lg shadow-sm">
+      <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Checkboxes</h1>
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
         <div className="space-y-4" data-test="checkbox-group">
           {checkboxes.map(({ id, label, checked }) => (
             <label
@@ -50,10 +50,10 @@ export const CheckboxesPage: React.FC = () => {
                 type="checkbox"
                 checked={checked}
                 onChange={() => handleCheckboxChange(id)}
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 dark:border-gray-600 rounded dark:bg-gray-700 dark:checked:bg-blue-600"
                 data-test={`checkbox-${id}`}
               />
-              <span>{label}</span>
+              <span className="text-gray-700 dark:text-gray-300">{label}</span>
             </label>
           ))}
         </div>

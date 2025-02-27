@@ -6,8 +6,8 @@ export const DragDropPage: React.FC = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
-      <h1 className="text-2xl font-bold mb-6">Drag and Drop</h1>
-      <p className="mb-6">
+      <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Drag and Drop</h1>
+      <p className="mb-6 text-gray-600 dark:text-gray-300">
         Practice drag and drop interactions. Try reordering the items below using
         both mouse and keyboard controls.
       </p>

@@ -47,16 +47,16 @@ export const FileDownloadPage: React.FC = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
-      <h1 className="text-2xl font-bold mb-6">File Download</h1>
+      <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">File Download</h1>
       
       {error && (
-        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start" data-test="error-message">
-          <AlertCircle className="w-5 h-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" />
-          <p className="text-red-700">{error}</p>
+        <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg flex items-start" data-test="error-message">
+          <AlertCircle className="w-5 h-5 text-red-500 dark:text-red-400 mr-2 flex-shrink-0 mt-0.5" />
+          <p className="text-red-700 dark:text-red-300">{error}</p>
         </div>
       )}
 
-      <div className="bg-white rounded-lg shadow-sm">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm">
         <div className="px-4 py-5 sm:p-6">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {files.map((file, index) => {
@@ -64,17 +64,17 @@ export const FileDownloadPage: React.FC = () => {
               return (
                 <div
                   key={index}
-                  className="border rounded-lg p-4 hover:shadow-md transition-shadow"
+                  className="border dark:border-gray-700 rounded-lg p-4 hover:shadow-md transition-shadow bg-white dark:bg-gray-800"
                   data-test={`download-card-${index}`}
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex items-start space-x-3">
-                      <Icon className="w-6 h-6 text-gray-400 mt-1" />
+                      <Icon className="w-6 h-6 text-gray-400 dark:text-gray-500 mt-1" />
                       <div>
-                        <h3 className="text-lg font-medium text-gray-900">
+                        <h3 className="text-lg font-medium text-gray-900 dark:text-white">
                           {file.name}
                         </h3>
-                        <p className="mt-1 text-sm text-gray-500">
+                        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                           {file.type} • {file.size}
                         </p>
                       </div>
@@ -84,8 +84,8 @@ export const FileDownloadPage: React.FC = () => {
                       disabled={downloading === file.filename}
                       className={`p-2 rounded-full transition-colors ${
                         downloading === file.filename
-                          ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                          : 'text-gray-400 hover:text-gray-500 hover:bg-gray-100'
+                          ? 'bg-gray-100 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed'
+                          : 'text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'
                       }`}
                       data-test={`download-button-${index}`}
                     >

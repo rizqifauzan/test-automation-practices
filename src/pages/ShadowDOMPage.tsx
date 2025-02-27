@@ -27,6 +27,13 @@ export const ShadowDOMPage: React.FC = () => {
         .shadow-button:hover {
           background: #45a049;
         }
+        
+        @media (prefers-color-scheme: dark) {
+          .shadow-content {
+            background: #333;
+            color: #fff;
+          }
+        }
       `;
 
       const content = document.createElement('div');
@@ -64,20 +71,20 @@ export const ShadowDOMPage: React.FC = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
-      <h1 className="text-2xl font-bold mb-6">Shadow DOM Example</h1>
-      <p className="mb-6">
+      <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Shadow DOM Example</h1>
+      <p className="mb-6 text-gray-600 dark:text-gray-300">
         This page demonstrates working with Shadow DOM elements, which provide
         encapsulation for markup structure, style, and behavior.
       </p>
 
-      <div className="bg-white p-6 rounded-lg shadow-sm">
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
         <div ref={hostRef} data-test="shadow-host">
           {/* Shadow DOM content will be attached here */}
         </div>
 
-        <div className="mt-6 p-4 bg-gray-50 rounded">
-          <h3 className="text-lg font-medium mb-2">Regular DOM Content</h3>
-          <p>This content is in the regular DOM, outside the Shadow DOM.</p>
+        <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-700 rounded">
+          <h3 className="text-lg font-medium mb-2 text-gray-900 dark:text-white">Regular DOM Content</h3>
+          <p className="text-gray-700 dark:text-gray-300">This content is in the regular DOM, outside the Shadow DOM.</p>
         </div>
       </div>
     </div>

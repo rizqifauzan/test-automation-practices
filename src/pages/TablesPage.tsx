@@ -10,8 +10,8 @@ const mockData = [
 export const TablesPage: React.FC = () => {
   return (
     <div className="px-4 py-6 sm:px-0">
-      <h1 className="text-2xl font-bold mb-6">Dynamic Tables</h1>
-      <p className="mb-6">
+      <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Dynamic Tables</h1>
+      <p className="mb-6 text-gray-600 dark:text-gray-300">
         Practice working with sortable tables, data grids, and dynamic content.
         Click on column headers to sort the data.
       </p>

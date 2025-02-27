@@ -25,7 +25,7 @@ export const NotificationExample: React.FC = () => {
 
   return (
     <div className="space-y-4" data-test="notification-example">
-      <div className="space-x-4">
+      <div className="flex flex-wrap gap-2">
         <button
           onClick={() => addNotification('success')}
           className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
@@ -50,23 +50,23 @@ export const NotificationExample: React.FC = () => {
       </div>
 
       <div
-        className="fixed top-4 right-4 space-y-2 w-80"
+        className="fixed top-4 right-4 space-y-2 w-[calc(100%-2rem)] sm:w-80 z-50"
         data-test="notification-container"
       >
         {notifications.map(({ id, type, message }) => (
           <div
             key={id}
             className={`p-4 rounded shadow-lg flex justify-between items-start ${
-              type === 'success' ? 'bg-green-100 text-green-800' :
-              type === 'error' ? 'bg-red-100 text-red-800' :
-              'bg-blue-100 text-blue-800'
+              type === 'success' ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300' :
+              type === 'error' ? 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300' :
+              'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300'
             }`}
             data-test={`notification-${id}`}
           >
-            <p>{message}</p>
+            <p className="pr-2">{message}</p>
             <button
               onClick={() => removeNotification(id)}
-              className="ml-4 text-gray-500 hover:text-gray-700"
+              className="ml-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 flex-shrink-0"
               data-test={`close-notification-${id}`}
             >
               <X className="w-4 h-4" />

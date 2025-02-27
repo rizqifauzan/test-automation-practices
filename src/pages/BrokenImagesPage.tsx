@@ -21,8 +21,8 @@ const images = [
 export const BrokenImagesPage: React.FC = () => {
   return (
     <div className="px-4 py-6 sm:px-0">
-      <h1 className="text-2xl font-bold mb-6">Broken Images</h1>
-      <p className="mb-6">
+      <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Broken Images</h1>
+      <p className="mb-6 text-gray-600 dark:text-gray-300">
         This page contains both valid and broken images to test image loading error handling.
       </p>
       
@@ -30,16 +30,16 @@ export const BrokenImagesPage: React.FC = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className="bg-white p-4 rounded-lg shadow-sm"
+            className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm"
             data-test={`image-container-${index}`}
           >
             <img
               src={image.src}
               alt={image.alt}
-              className="w-full h-48 object-cover mb-4"
+              className="w-full h-48 object-cover mb-4 bg-gray-100 dark:bg-gray-700"
               data-test={`image-${index}`}
             />
-            <p className="text-sm text-gray-600">{image.description}</p>
+            <p className="text-sm text-gray-600 dark:text-gray-300">{image.description}</p>
           </div>
         ))}
       </div>

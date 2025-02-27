@@ -168,39 +168,39 @@ const categories = [
 export const Home: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+      <div className="text-center mb-8 md:mb-12 px-4">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
           Test Automation Practice
         </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           A comprehensive platform for practicing test automation scenarios. 
           Choose from various challenges below to enhance your testing skills.
         </p>
       </div>
 
-      <div className="space-y-12">
+      <div className="space-y-8 md:space-y-12 px-4">
         {categories.map(category => (
-          <div key={category.name} className="mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">{category.name}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div key={category.name} className="mb-6 md:mb-8">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6">{category.name}</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               {category.items.map(({ title, path, description, icon }) => (
                 <Link
                   key={path}
                   to={path}
-                  className="group block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700"
+                  className="group block p-4 md:p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 dark:border-gray-700"
                   data-test={`feature-card-${path.slice(1)}`}
                 >
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 p-2 bg-blue-50 dark:bg-blue-900 rounded-lg group-hover:bg-blue-100 dark:group-hover:bg-blue-800 transition-colors">
+                  <div className="flex items-start space-x-3 md:space-x-4">
+                    <div className="flex-shrink-0 p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg group-hover:bg-blue-100 dark:group-hover:bg-blue-900/50 transition-colors">
                       {React.cloneElement(icon, {
-                        className: `w-6 h-6 text-blue-500 dark:text-blue-400`
+                        className: `w-5 h-5 md:w-6 md:h-6 text-blue-500 dark:text-blue-400`
                       })}
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                         {title}
                       </h3>
-                      <p className="text-gray-600 dark:text-gray-300">{description}</p>
+                      <p className="text-sm md:text-base text-gray-600 dark:text-gray-300">{description}</p>
                     </div>
                   </div>
                 </Link>

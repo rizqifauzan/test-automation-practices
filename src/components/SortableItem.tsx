@@ -25,7 +25,7 @@ export const SortableItem: React.FC<SortableItemProps> = ({ id }) => {
     <div
       ref={setNodeRef}
       style={style}
-      className="flex items-center p-4 bg-white rounded shadow-sm"
+      className="flex items-center p-4 bg-white dark:bg-gray-800 rounded shadow-sm"
       data-test={`sortable-item-${id}`}
     >
       <button
@@ -34,9 +34,9 @@ export const SortableItem: React.FC<SortableItemProps> = ({ id }) => {
         {...listeners}
         data-test={`drag-handle-${id}`}
       >
-        <GripVertical className="w-4 h-4 text-gray-400" />
+        <GripVertical className="w-4 h-4 text-gray-400 dark:text-gray-500" />
       </button>
-      <span>{id}</span>
+      <span className="text-gray-900 dark:text-white">{id}</span>
     </div>
   );
 };

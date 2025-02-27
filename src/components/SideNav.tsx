@@ -2,6 +2,11 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Home, ChevronRight } from 'lucide-react';
 
+interface SideNavProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
 const menuItems = [
   {
     category: 'Basic',
@@ -45,16 +50,27 @@ const menuItems = [
   }
 ];
 
-export const SideNav: React.FC = () => {
+export const SideNav: React.FC<SideNavProps> = ({ isOpen = true, onClose }) => {
   const location = useLocation();
 
+  const handleLinkClick = () => {
+    if (onClose && window.innerWidth < 768) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="w-64 bg-white dark:bg-gray-800 shadow-lg h-screen fixed left-0 top-0 overflow-y-auto">
+    <div 
+      className={`bg-white dark:bg-gray-800 shadow-lg h-screen overflow-y-auto transition-all duration-300 z-40
+        ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
+        fixed md:translate-x-0 md:sticky top-0 left-0 w-64`}
+    >
       <div className="p-4 border-b border-gray-200 dark:border-gray-700">
         <Link 
           to="/" 
           className="flex items-center space-x-2 text-gray-800 dark:text-white hover:text-blue-600 dark:hover:text-blue-400"
           data-test="home-link"
+          onClick={handleLinkClick}
         >
           <Home className="w-5 h-5" />
           <span className="font-semibold">Home</span>
@@ -74,10 +90,11 @@ export const SideNav: React.FC = () => {
                     to={item.path}
                     className={`flex items-center px-3 py-2 text-sm rounded-md ${
                       location.pathname === item.path
-                        ? 'bg-blue-50 dark:bg-blue-900 text-blue-600 dark:text-blue-400'
+                        ? 'bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400'
                         : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
                     }`}
                     data-test={`nav-${item.path.slice(1)}`}
+                    onClick={handleLinkClick}
                   >
                     <ChevronRight className="w-4 h-4 mr-2" />
                     {item.label}

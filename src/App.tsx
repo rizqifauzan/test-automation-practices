@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { ThemeToggle } from './components/ThemeToggle';
@@ -24,16 +24,48 @@ import { SliderPage } from './pages/SliderPage';
 import { AlertsPage } from './pages/AlertsPage';
 import { KeyPressPage } from './pages/KeyPressPage';
 import { ShadowDOMPage } from './pages/ShadowDOMPage';
+import { Menu, X } from 'lucide-react';
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
   return (
     <ThemeProvider>
       <Router>
-        <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors flex">
-          <SideNav />
-          <div className="flex-1 ml-64">
+        <div className="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors flex flex-col md:flex-row">
+          {/* Mobile menu button */}
+          <button 
+            onClick={toggleSidebar}
+            className="md:hidden fixed top-4 left-4 z-50 p-2 rounded-md bg-white dark:bg-gray-800 shadow-md"
+            aria-label="Toggle menu"
+            data-test="mobile-menu-button"
+          >
+            {sidebarOpen ? (
+              <X className="h-6 w-6 text-gray-600 dark:text-gray-300" />
+            ) : (
+              <Menu className="h-6 w-6 text-gray-600 dark:text-gray-300" />
+            )}
+          </button>
+
+          {/* Sidebar for mobile with overlay */}
+          <div 
+            className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 md:hidden ${
+              sidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            }`}
+            onClick={toggleSidebar}
+          />
+
+          {/* Sidebar */}
+          <SideNav isOpen={sidebarOpen} onClose={toggleSidebar} />
+          
+          {/* Main content */}
+          <div className="flex-1 md:ml-64 pt-16 md:pt-0">
             <ThemeToggle />
-            <main className="p-6">
+            <main className="p-4 md:p-6">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<AboutPage />} />

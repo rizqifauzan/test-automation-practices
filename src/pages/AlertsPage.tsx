@@ -20,8 +20,8 @@ export const AlertsPage: React.FC = () => {
 
   return (
     <div className="px-4 py-6 sm:px-0">
-      <h1 className="text-2xl font-bold mb-6">JavaScript Alerts</h1>
-      <div className="bg-white p-6 rounded-lg shadow-sm space-y-6">
+      <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">JavaScript Alerts</h1>
+      <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm space-y-6">
         <div>
           <button
             onClick={handleAlert}
@@ -54,10 +54,10 @@ export const AlertsPage: React.FC = () => {
 
         {lastAction && (
           <div
-            className="mt-4 p-4 bg-gray-100 rounded"
+            className="mt-4 p-4 bg-gray-100 dark:bg-gray-700 rounded"
             data-test="result-container"
           >
-            Last action: {lastAction}
+            <span className="text-gray-900 dark:text-white">Last action: {lastAction}</span>
           </div>
         )}
       </div>

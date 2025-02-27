@@ -50,7 +50,7 @@ export const LoginForm: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-4 max-w-md mx-auto"
+      className="space-y-4 max-w-md mx-auto px-4 sm:px-0"
       data-test="login-form"
     >
       <div>

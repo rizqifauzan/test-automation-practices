@@ -26,43 +26,47 @@ export const DynamicTable: React.FC<DynamicTableProps> = ({ data }) => {
   });
 
   return (
-    <div className="overflow-x-auto" data-test="dynamic-table">
-      <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gray-50">
-          <tr>
-            {Object.keys(data[0]).map((key) => (
-              <th
-                key={key}
-                onClick={() => handleSort(key as keyof TableData)}
-                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100"
-                data-test={`table-header-${key}`}
-              >
-                {key}
-                {sortField === key && (
-                  <span className="ml-2">
-                    {sortDirection === 'asc' ? '↑' : '↓'}
-                  </span>
-                )}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
-          {sortedData.map((row) => (
-            <tr key={row.id} data-test={`table-row-${row.id}`}>
-              {Object.entries(row).map(([key, value]) => (
-                <td
+    <div className="overflow-x-auto -mx-4 sm:-mx-0" data-test="dynamic-table">
+      <div className="inline-block min-w-full align-middle">
+        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+          <thead className="bg-gray-50 dark:bg-gray-700">
+            <tr>
+              {Object.keys(data[0]).map((key) => (
+                <th
                   key={key}
-                  className="px-6 py-4 whitespace-nowrap"
-                  data-test={`table-cell-${key}-${row.id}`}
+                  onClick={() => handleSort(key as keyof TableData)}
+                  className="px-3 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"
+                  data-test={`table-header-${key}`}
                 >
-                  {value}
-                </td>
+                  <div className="flex items-center">
+                    <span className="mr-1">{key}</span>
+                    {sortField === key && (
+                      <span>
+                        {sortDirection === 'asc' ? '↑' : '↓'}
+                      </span>
+                    )}
+                  </div>
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+            {sortedData.map((row) => (
+              <tr key={row.id} data-test={`table-row-${row.id}`} className="hover:bg-gray-50 dark:hover:bg-gray-700">
+                {Object.entries(row).map(([key, value]) => (
+                  <td
+                    key={key}
+                    className="px-3 py-4 text-sm whitespace-nowrap text-gray-900 dark:text-gray-300"
+                    data-test={`table-cell-${key}-${row.id}`}
+                  >
+                    {value}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
