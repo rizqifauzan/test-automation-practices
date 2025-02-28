@@ -170,7 +170,7 @@ export const Home: React.FC = () => {
     <div className="max-w-7xl mx-auto">
       <div className="text-center mb-8 md:mb-12 px-4">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          Test Automation Practice
+          Test Automation Practice (Web and Mobile Web)
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           A comprehensive platform for practicing test automation scenarios. 
