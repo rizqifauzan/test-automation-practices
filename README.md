@@ -1,6 +1,6 @@
-# Test Automation Practice Platform
+# Test Automation Practice Platform (Web and Mobile Web)
 
-A comprehensive platform designed to help QA engineers and developers practice test automation with real-world scenarios and challenges. This application provides a wide range of testing opportunities through various interactive components and edge cases commonly found in web applications.
+A platform designed to help QA engineers and developers practice test automation with real-world scenarios and challenges for Web and Mobile Web. This application provides various testing opportunities through interactive components and edge cases commonly found in web applications.
 
 ![Automation Screenshot](images/homepage.png)
 
